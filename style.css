@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+body{
+    background-color: hsl(0, 0%, 100%);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2.3em;
+}
+
+.logo-manu{
+    display: flex;
+    align-items: center;
+}
+
+.navLinks{
+    display: flex;
+    margin-left: 5em;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.links{
+    margin-left: 2em;
+    list-style: none;
+    font-size: 1.1rem;
+    color: hsl(220, 14%, 75%);
+}
+
+.cart-avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-avatar > .cart{
+    margin-right: 4em;
+}
+
