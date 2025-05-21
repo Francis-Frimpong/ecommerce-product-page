@@ -13,6 +13,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1em 2.3em;
+    margin-bottom: 1em;
 }
 
 .logo-manu{
@@ -42,5 +43,39 @@ body{
 
 .cart-avatar > .cart{
     margin-right: 4em;
+}
+
+.avatar{
+    width: 60px;
+    height: 60px;
+}
+
+.line{
+    width: 95%;
+    height: 2px;
+    background-color: hsl(223, 64%, 98%);
+    margin: 0 auto;
+}
+
+.shoe-img{
+    width: 25em;
+    height: 25em;
+    border-radius: 7px;
+}
+
+.products{
+    margin-top: 5em;
+}
+
+.product-img{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.shoes-img-thumbnails > img{
+    width: 80px;
+    height: 80px;
+    border-radius: 7px;
 }
 
