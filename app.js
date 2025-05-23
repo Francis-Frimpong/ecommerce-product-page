@@ -10,7 +10,7 @@ overviewImg.src = overviewList[0];
 const thumbnails = document.querySelectorAll('.thumbnail')
 const shoesImgThumbnails = document.querySelector('.shoes-img-thumbnails')
 
-//link thumbnail image to product image
+//linking thumbnail image to product image
 function linkThumbnailToProductImg(e){
      if(e.target.classList.contains('thumbnail')){
         thumbnails.forEach((thumbnail, index) => {
