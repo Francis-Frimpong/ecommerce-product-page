@@ -102,9 +102,7 @@ body{
   border-radius: 0.25rem;
   transition: opacity 0.2s;
 }
-.shoes-img-thumbnails img:hover {
-  opacity: 0.7;
-}
+
 
 .product-text {
   display: flex;
@@ -184,6 +182,12 @@ body{
 .buttons button:hover {
   background-color: hsl(26, 100%, 60%);
 }
+
+.active-thumbnail{
+  border: 4px solid hsl(26, 100%, 60%);
+  opacity: 0.5;
+}
+
 
 /* 2. Two-column layout on wider screens */
 @media (min-width: 768px) {
