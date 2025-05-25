@@ -103,6 +103,9 @@ body{
   border-radius: 0.25rem;
   transition: opacity 0.2s;
 }
+.shoes-img-thumbnails img:hover {
+  opacity: 0.7;
+}
 
 
 .product-text {
