@@ -28,8 +28,7 @@ function linkThumbnailToProductImg(e){
                 thumbnail.classList.add('active-thumbnail');
                 overviewImg.src = overviewList[index];
                 lightBoxImg.src = overviewList[index];
-              
-
+                counter = index; // ✅ Update counter to match selected image
             }else{
                 thumbnail.classList.remove('active-thumbnail');
 
@@ -37,8 +36,8 @@ function linkThumbnailToProductImg(e){
             }
         })
     
+        linkOverviewImgToThumbnail()
     }
-    linkOverviewImgToThumbnail()
 
 }  
 
@@ -47,8 +46,6 @@ function linkThumbnailToProductImg(e){
 function openLightBox(){
     document.querySelector('.overlay').style.display = 'block';
     document.querySelector('.lightbox').style.display = 'block';
-    linkOverviewImgToThumbnail()
-    
     
 }
 
@@ -75,7 +72,7 @@ function nextLightBoxImg(){
 function previousLightBoxImg(){
     counter--;
     if(counter < 0){
-        counter = 0;
+        counter = overviewList.length - 1;
     }
     lightBoxImg.src = overviewList[counter];
     linkOverviewImgToThumbnail()
@@ -87,12 +84,11 @@ function previousLightBoxImg(){
 function linkOverviewImgToThumbnail() {
 
     lightboxThumbNails.forEach((lightboxThumbNail, index) => {
-        overviewList[index];
-        if(index === counter){
+        if(lightBoxImg.src.endsWith(overviewList[index])){
             lightboxThumbNail.classList.add('active-thumbnail');
         }else{
             lightboxThumbNail.classList.remove('active-thumbnail');
-    
+        
         }
     
     })
