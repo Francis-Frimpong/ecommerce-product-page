@@ -9,6 +9,8 @@ const overviewImg = document.querySelector('.shoe-img');
 overviewImg.src = overviewList[0];
 const thumbnails = document.querySelectorAll('.thumbnail')
 const shoesImgThumbnails = document.querySelector('.shoes-img-thumbnails')
+const shoeImg = document.querySelector('.shoe-img');
+const closeOverlay = document.querySelector('.close-icon')
 
 //linking thumbnail image to product image
 function linkThumbnailToProductImg(e){
@@ -26,7 +28,22 @@ function linkThumbnailToProductImg(e){
     }
 }  
 
-shoesImgThumbnails.addEventListener('click', linkThumbnailToProductImg)
+function openLightBox(){
+    document.querySelector('.overlay').style.display = 'block';
+    document.querySelector('.lightbox').style.display = 'block';
 
+}
+
+function closeLightBox(){
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.lightbox').style.display = 'none';
+
+}
+
+
+
+shoesImgThumbnails.addEventListener('click', linkThumbnailToProductImg);
+shoeImg.addEventListener('click', openLightBox);
+closeOverlay.addEventListener('click', closeLightBox);
 
 

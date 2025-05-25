@@ -196,7 +196,7 @@ body{
   position: absolute;
   top: 0;
   opacity: 0.8;
-  /* display: none; */
+  display:none;
 }
 
 /* Lightbox container */
@@ -209,7 +209,7 @@ body{
   max-width: 500px;
   width: 90%;
   text-align: center;
-  /* display: none; */
+  display: none;
 }
 
 /* Main image */
@@ -223,15 +223,16 @@ body{
 .lightbox-thumbnails {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+
 }
 
 .thumbnail {
-  width: 100%;
+  width: 70%;
   border-radius: 5px;
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s, border 0.3s;
+  margin: 0 auto;
 }
 
 .next-icon,  .previous-icon {
