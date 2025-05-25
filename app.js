@@ -6,8 +6,14 @@ let overviewList = [
 ]
 
 const overviewImg = document.querySelector('.shoe-img');
+const lightBoxImg = document.querySelector('.lightbox-img')
+
 overviewImg.src = overviewList[0];
+lightBoxImg.src = overviewList[0];
+
 const thumbnails = document.querySelectorAll('.thumbnail')
+const lightboxThumbNail = document.querySelector('.lightbox-thumbnail')
+
 const shoesImgThumbnails = document.querySelector('.shoes-img-thumbnails')
 const shoeImg = document.querySelector('.shoe-img');
 const closeOverlay = document.querySelector('.close-icon')
@@ -15,12 +21,17 @@ const closeOverlay = document.querySelector('.close-icon')
 //linking thumbnail image to product image
 function linkThumbnailToProductImg(e){
      if(e.target.classList.contains('thumbnail')){
+        // lightboxThumbNail.classList.add('active-thumbnail');
         thumbnails.forEach((thumbnail, index) => {
             if(e.target == thumbnail){
-                thumbnail.classList.add('active-thumbnail')
-                overviewImg.src = overviewList[index]
+                thumbnail.classList.add('active-thumbnail');
+                overviewImg.src = overviewList[index];
+                lightBoxImg.src = overviewList[index];
+
             }else{
-                thumbnail.classList.remove('active-thumbnail')
+                thumbnail.classList.remove('active-thumbnail');
+                // lightboxThumbNail.classList.remove('active-thumbnail');
+
 
             }
         })

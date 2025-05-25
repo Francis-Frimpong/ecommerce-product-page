@@ -226,7 +226,7 @@ body{
 
 }
 
-.thumbnail {
+.lightbox-thumbnail {
   width: 70%;
   border-radius: 5px;
   cursor: pointer;
