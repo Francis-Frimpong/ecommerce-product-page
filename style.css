@@ -60,6 +60,25 @@ body{
   display: none;
 }
 
+.cart-box{
+  width: 450px;
+  height: 250px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 2px 2px 52px -18px rgba(0,0,0,0.88);
+  -webkit-box-shadow: 2px 2px 52px -18px rgba(0,0,0,0.88);
+  -moz-box-shadow: 2px 2px 52px -18px rgba(0,0,0,0.88);
+  position: absolute;
+  top: 100px;
+  right: 114px;
+}
+
+.cart-line{
+  width: 100%;
+  height: 2px;
+  background-color: hsl(223, 64%, 98%);
+}
+
 .cart-avatar > .cart{
     margin-right: 4em;
 }
