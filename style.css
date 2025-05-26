@@ -42,6 +42,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.cart-notification{
+  width: 27px;
+  height: 20px;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  display: none;
 }
 
 .cart-avatar > .cart{
@@ -51,6 +67,11 @@ body{
 .avatar{
     width: 60px;
     height: 60px;
+}
+
+.avatar:hover{
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
 }
 
 .line{
