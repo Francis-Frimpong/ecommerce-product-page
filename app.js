@@ -85,17 +85,21 @@ const numCounter = document.querySelector(".num-counter");
 const counterBtn = document.querySelector(".counter-btn");
 
 numCounter.textContent = countproduct;
-counterBtn.addEventListener("click", (e) => {
+
+function productCounter(e) {
   if (e.target.classList.contains("plus")) {
     countproduct++;
     numCounter.textContent = countproduct;
   } else {
-    if (countproduct < 0) {
-      countproduct = 0;
+    if (countproduct > 0) {
+      countproduct--;
       numCounter.textContent = countproduct;
     }
   }
-});
+}
+
+// Event listeners for various events
+counterBtn.addEventListener("click", productCounter);
 
 shoesImgThumbnails.addEventListener("click", linkThumbnailToProductImg);
 
