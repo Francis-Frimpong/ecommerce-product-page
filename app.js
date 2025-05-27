@@ -1,112 +1,110 @@
 let overviewList = [
-    "images/image-product-1.jpg",
-    "images/image-product-2.jpg",
-    "images/image-product-3.jpg",
-    "images/image-product-4.jpg",
-]
+  "images/image-product-1.jpg",
+  "images/image-product-2.jpg",
+  "images/image-product-3.jpg",
+  "images/image-product-4.jpg",
+];
 
-const overviewImg = document.querySelector('.shoe-img');
-const lightBoxImg = document.querySelector('.lightbox-img')
+const overviewImg = document.querySelector(".shoe-img");
+const lightBoxImg = document.querySelector(".lightbox-img");
 
 overviewImg.src = overviewList[0];
 lightBoxImg.src = overviewList[0];
 
-const thumbnails = document.querySelectorAll('.thumbnail')
-const lightboxThumbNails = document.querySelectorAll('.lightbox-thumbnail')
+const thumbnails = document.querySelectorAll(".thumbnail");
+const lightboxThumbNails = document.querySelectorAll(".lightbox-thumbnail");
 
-const shoesImgThumbnails = document.querySelector('.shoes-img-thumbnails')
-const shoeImg = document.querySelector('.shoe-img');
-const closeOverlay = document.querySelector('.close-icon')
-
-
+const shoesImgThumbnails = document.querySelector(".shoes-img-thumbnails");
+const shoeImg = document.querySelector(".shoe-img");
+const closeOverlay = document.querySelector(".close-icon");
 
 //linking thumbnail image to product image
-function linkThumbnailToProductImg(e){
-    if(e.target.classList.contains('thumbnail')){
-        thumbnails.forEach((thumbnail, index) => {
-            if(e.target == thumbnail){
-                thumbnail.classList.add('active-thumbnail');
-                overviewImg.src = overviewList[index];
-                lightBoxImg.src = overviewList[index];
-                counter = index; // ✅ Update counter to match selected image
-            }else{
-                thumbnail.classList.remove('active-thumbnail');
+function linkThumbnailToProductImg(e) {
+  if (e.target.classList.contains("thumbnail")) {
+    thumbnails.forEach((thumbnail, index) => {
+      if (e.target == thumbnail) {
+        thumbnail.classList.add("active-thumbnail");
+        overviewImg.src = overviewList[index];
+        lightBoxImg.src = overviewList[index];
+        counter = index; // ✅ Update counter to match selected image
+      } else {
+        thumbnail.classList.remove("active-thumbnail");
+      }
+    });
 
-
-            }
-        })
-    
-        linkOverviewImgToThumbnail()
-    }
-
-}  
-
-
-
-function openLightBox(){
-    document.querySelector('.overlay').style.display = 'block';
-    document.querySelector('.lightbox').style.display = 'block';
-    
+    linkOverviewImgToThumbnail();
+  }
 }
 
-function closeLightBox(){
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('.lightbox').style.display = 'none';
-    
+function openLightBox() {
+  document.querySelector(".overlay").style.display = "block";
+  document.querySelector(".lightbox").style.display = "block";
 }
 
+function closeLightBox() {
+  document.querySelector(".overlay").style.display = "none";
+  document.querySelector(".lightbox").style.display = "none";
+}
 
 let counter = 0;
 
-function nextLightBoxImg(){
-    counter++;
-    
-    if(counter >= overviewList.length){
-        counter = 0;
-    }
-    lightBoxImg.src = overviewList[counter];
-    linkOverviewImgToThumbnail()
+function nextLightBoxImg() {
+  counter++;
 
+  if (counter >= overviewList.length) {
+    counter = 0;
+  }
+  lightBoxImg.src = overviewList[counter];
+  linkOverviewImgToThumbnail();
 }
 
-function previousLightBoxImg(){
-    counter--;
-    if(counter < 0){
-        counter = overviewList.length - 1;
-    }
-    lightBoxImg.src = overviewList[counter];
-    linkOverviewImgToThumbnail()
-
+function previousLightBoxImg() {
+  counter--;
+  if (counter < 0) {
+    counter = overviewList.length - 1;
+  }
+  lightBoxImg.src = overviewList[counter];
+  linkOverviewImgToThumbnail();
 }
-
-
 
 function linkOverviewImgToThumbnail() {
-
-    lightboxThumbNails.forEach((lightboxThumbNail, index) => {
-        if(lightBoxImg.src.endsWith(overviewList[index])){
-            lightboxThumbNail.classList.add('active-thumbnail');
-        }else{
-            lightboxThumbNail.classList.remove('active-thumbnail');
-        
-        }
-    
-    })
+  lightboxThumbNails.forEach((lightboxThumbNail, index) => {
+    if (lightBoxImg.src.endsWith(overviewList[index])) {
+      lightboxThumbNail.classList.add("active-thumbnail");
+    } else {
+      lightboxThumbNail.classList.remove("active-thumbnail");
+    }
+  });
 }
 
-linkOverviewImgToThumbnail()
+linkOverviewImgToThumbnail();
 
+// Pouduct counter functionality
+let countproduct = 0;
+const numCounter = document.querySelector(".num-counter");
+const counterBtn = document.querySelector(".counter-btn");
 
+numCounter.textContent = countproduct;
+counterBtn.addEventListener("click", (e) => {
+  if (e.target.classList.contains("plus")) {
+    countproduct++;
+    numCounter.textContent = countproduct;
+  } else {
+    if (countproduct < 0) {
+      countproduct = 0;
+      numCounter.textContent = countproduct;
+    }
+  }
+});
 
+shoesImgThumbnails.addEventListener("click", linkThumbnailToProductImg);
 
-shoesImgThumbnails.addEventListener('click', linkThumbnailToProductImg);
+shoeImg.addEventListener("click", openLightBox);
 
-shoeImg.addEventListener('click', openLightBox);
+closeOverlay.addEventListener("click", closeLightBox);
 
-closeOverlay.addEventListener('click', closeLightBox);
+document.querySelector(".next-icon").addEventListener("click", nextLightBoxImg);
 
-document.querySelector('.next-icon').addEventListener('click', nextLightBoxImg);
-
-document.querySelector('.previous-icon').addEventListener('click', previousLightBoxImg);
-
-
+document
+  .querySelector(".previous-icon")
+  .addEventListener("click", previousLightBoxImg);
