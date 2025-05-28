@@ -62,7 +62,6 @@ body {
 
 .cart-box {
   width: 450px;
-  height: 200px;
   background-color: white;
   border-radius: 7px;
   box-shadow: 2px 2px 52px -18px rgba(0, 0, 0, 0.88);
@@ -97,6 +96,28 @@ body {
 
 .cart-avatar > .cart {
   margin-right: 4em;
+}
+
+.checkout {
+  display: block; /* so margin: auto centers it */
+  width: 100%;
+  max-width: 400px; /* optional cap on button width */
+  margin: 0 auto;
+  padding: 12px 0;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(220, 13%, 13%);
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 2em;
+}
+
+.checkout:hover {
+  background-color: hsl(26, 97%, 65%);
 }
 
 .avatar {
