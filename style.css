@@ -71,6 +71,7 @@ body {
   position: absolute;
   top: 95px;
   right: 114px;
+  z-index: 0;
   /* display: none; */
 }
 
@@ -85,7 +86,7 @@ body {
   align-items: center;
   height: 100px;
   color: hsl(219, 9%, 45%);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .cart-line {
@@ -251,6 +252,7 @@ body {
   top: 0;
   opacity: 0.8;
   display: none;
+  z-index: 1000;
 }
 
 /* Lightbox container */
