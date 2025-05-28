@@ -62,16 +62,30 @@ body {
 
 .cart-box {
   width: 450px;
-  height: 250px;
+  height: 200px;
   background-color: white;
   border-radius: 7px;
   box-shadow: 2px 2px 52px -18px rgba(0, 0, 0, 0.88);
   -webkit-box-shadow: 2px 2px 52px -18px rgba(0, 0, 0, 0.88);
   -moz-box-shadow: 2px 2px 52px -18px rgba(0, 0, 0, 0.88);
   position: absolute;
-  top: 100px;
+  top: 95px;
   right: 114px;
-  display: none;
+  /* display: none; */
+}
+
+.cart-box h5 {
+  padding: 1em 1em 1em 1em;
+  margin: auto 0;
+  font-size: 1.2rem;
+}
+.cart-box h6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: hsl(219, 9%, 45%);
+  font-size: 1.2rem;
 }
 
 .cart-line {
