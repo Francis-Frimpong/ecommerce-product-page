@@ -5,6 +5,8 @@ let overviewList = [
   "images/image-product-4.jpg",
 ];
 
+let cartList = [];
+
 const overviewImg = document.querySelector(".shoe-img");
 const lightBoxImg = document.querySelector(".lightbox-img");
 
@@ -17,6 +19,8 @@ const lightboxThumbNails = document.querySelectorAll(".lightbox-thumbnail");
 const shoesImgThumbnails = document.querySelector(".shoes-img-thumbnails");
 const shoeImg = document.querySelector(".shoe-img");
 const closeOverlay = document.querySelector(".close-icon");
+
+const addBtn = document.querySelector(".add-btn");
 
 //linking thumbnail image to product image
 function linkThumbnailToProductImg(e) {
@@ -99,6 +103,14 @@ function productCounter(e) {
 }
 
 // Event listeners for various events
+
+addBtn.addEventListener("click", () => {
+  console.log(cartList);
+  cartList.forEach((product) => {
+    cartList.push(product);
+    document.querySelector(".cart-box").textContent = product;
+  });
+});
 counterBtn.addEventListener("click", productCounter);
 
 shoesImgThumbnails.addEventListener("click", linkThumbnailToProductImg);
