@@ -105,10 +105,25 @@ function productCounter(e) {
 // Event listeners for various events
 
 addBtn.addEventListener("click", () => {
-  console.log(cartList);
+  console.log("Added to cart");
+  const productDetail = `
+     <div class="cartProduct">
+      <img
+        src="images/image-product-1-thumbnail.jpg"
+        alt=""
+        class="selected-product-img"
+      />
+      <div class="cartProduct-txt">
+        <h5>Fall Limited Edition Sneakers</h5>
+        <h5>$125.00 x 3 <span>$375.00</span></h5>
+      </div>
+      <img src="images/icon-delete.svg" alt="delete" class="delete-btn" />
+    </div>
+  `;
+
+  cartList.push(productDetail);
   cartList.forEach((product) => {
-    cartList.push(product);
-    document.querySelector(".cart-box").textContent = product;
+    document.querySelector(".display-cart-product").innerHTML = product;
   });
 });
 counterBtn.addEventListener("click", productCounter);
