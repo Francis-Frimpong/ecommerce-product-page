@@ -5,11 +5,14 @@ let overviewList = [
   "images/image-product-4.jpg",
 ];
 
+const [product1] = overviewList;
+
 let cartList = [];
 
 const overviewImg = document.querySelector(".shoe-img");
 const lightBoxImg = document.querySelector(".lightbox-img");
 
+const notificationCounter = document.querySelector(".notification-counter");
 overviewImg.src = overviewList[0];
 lightBoxImg.src = overviewList[0];
 
@@ -105,26 +108,41 @@ function productCounter(e) {
 // Event listeners for various events
 
 addBtn.addEventListener("click", () => {
-  console.log("Added to cart");
+  //don't add product to cart if counter equals 0
+  if (countproduct === 0) {
+    return;
+  }
+
+  let calProductPrice = 125.0 * countproduct;
   const productDetail = `
      <div class="cartProduct">
       <img
-        src="images/image-product-1-thumbnail.jpg"
+        src="${product1}"
         alt=""
         class="selected-product-img"
       />
       <div class="cartProduct-txt">
         <h5>Fall Limited Edition Sneakers</h5>
-        <h5>$125.00 x 3 <span>$375.00</span></h5>
+        <h5>$125.00 x ${countproduct} <span>$${calProductPrice}.00</span></h5>
       </div>
       <img src="images/icon-delete.svg" alt="delete" class="delete-btn" />
     </div>
   `;
 
   cartList.push(productDetail);
+
   cartList.forEach((product) => {
     document.querySelector(".display-cart-product").innerHTML = product;
+    document.querySelector(".cart-notification").style.display = "block";
+    notificationCounter.textContent = countproduct;
   });
+
+  //if cartList is empty display message else don't display messege
+  if (cartList.length > 0) {
+    document.querySelector(".empty-sign").style.display = "none";
+  } else {
+    document.querySelector(".empty-sign").style.display = "block";
+  }
 });
 counterBtn.addEventListener("click", productCounter);
 
