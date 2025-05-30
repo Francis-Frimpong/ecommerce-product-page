@@ -7,8 +7,6 @@ let overviewList = [
 
 const [product1] = overviewList;
 
-let cartList = [];
-
 const overviewImg = document.querySelector(".shoe-img");
 const lightBoxImg = document.querySelector(".lightbox-img");
 
@@ -26,6 +24,7 @@ const closeOverlay = document.querySelector(".close-icon");
 const addBtn = document.querySelector(".add-btn");
 const cart = document.querySelector(".cart");
 const cartBasket = document.querySelector(".cart-box");
+const cartProduct = document.querySelector(".cartProduct");
 
 //linking thumbnail image to product image
 function linkThumbnailToProductImg(e) {
@@ -107,13 +106,8 @@ function productCounter(e) {
   }
 }
 
-// Event listeners for various events
-
-cart.addEventListener("click", () => {
-  cartBasket.classList.toggle("display-cartBasket");
-});
-
-addBtn.addEventListener("click", () => {
+// Add product to cart function
+function addProductTocart() {
   //don't add product to cart if counter equals 0
   if (countproduct === 0) {
     return;
@@ -135,21 +129,39 @@ addBtn.addEventListener("click", () => {
     </div>
   `;
 
-  cartList.push(productDetail);
+  const displayCartProd = (document.querySelector(
+    ".display-cart-product"
+  ).innerHTML = productDetail);
 
-  cartList.forEach((product) => {
-    document.querySelector(".display-cart-product").innerHTML = product;
-    notificationCounter.style.display = "block";
-    notificationCounter.textContent = countproduct;
+  // Assigning the cartProduct html element to the cartProduct variable
+  const cartProduct = document.querySelector(".cartProduct");
+
+  //adding eventListener to the cartProduct to create the delete functionaliy
+  cartProduct.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+      cartProduct.remove();
+    }
   });
 
-  //if cartList is empty display message else don't display messege
-  if (cartList.length > 0) {
+  notificationCounter.style.display = "block";
+  notificationCounter.textContent = countproduct;
+
+  //if displayCartProd is empty display message else don't display messege
+  if (displayCartProd.textContent !== " ") {
     document.querySelector(".empty-sign").style.display = "none";
   } else {
     document.querySelector(".empty-sign").style.display = "block";
   }
+}
+
+// Event listeners for various events
+
+cart.addEventListener("click", () => {
+  cartBasket.classList.toggle("display-cartBasket");
 });
+
+addBtn.addEventListener("click", addProductTocart);
+
 counterBtn.addEventListener("click", productCounter);
 
 shoesImgThumbnails.addEventListener("click", linkThumbnailToProductImg);
