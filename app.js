@@ -106,6 +106,15 @@ function productCounter(e) {
   }
 }
 
+function deleteCartProduct(cartProduct, e) {
+  if (e.target.classList.contains("delete-btn")) {
+    cartProduct.remove();
+    countproduct = 0;
+    notificationCounter.style.display = "none";
+    notificationCounter.textContent = countproduct;
+  }
+}
+
 // Add product to cart function
 function addProductTocart() {
   //don't add product to cart if counter equals 0
@@ -138,9 +147,7 @@ function addProductTocart() {
 
   //adding eventListener to the cartProduct to create the delete functionaliy
   cartProduct.addEventListener("click", (e) => {
-    if (e.target.classList.contains("delete-btn")) {
-      cartProduct.remove();
-    }
+    deleteCartProduct(cartProduct, e);
   });
 
   notificationCounter.style.display = "block";
