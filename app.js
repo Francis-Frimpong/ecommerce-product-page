@@ -106,6 +106,7 @@ function productCounter(e) {
   }
 }
 
+// Delete product from cart
 function deleteCartProduct(cartProduct, e) {
   if (e.target.classList.contains("delete-btn")) {
     cartProduct.remove();
