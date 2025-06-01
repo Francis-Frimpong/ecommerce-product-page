@@ -162,11 +162,14 @@ function addProductTocart() {
   }
 }
 
+// display and close cart basket
+function displayAndCloseCartBasket() {
+  cartBasket.classList.toggle("display-cartBasket");
+}
+
 // Event listeners for various events
 
-cart.addEventListener("click", () => {
-  cartBasket.classList.toggle("display-cartBasket");
-});
+cart.addEventListener("click", displayAndCloseCartBasket);
 
 addBtn.addEventListener("click", addProductTocart);
 
