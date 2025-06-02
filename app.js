@@ -111,10 +111,12 @@ function deleteCartProduct(cartProduct, e) {
   if (e.target.classList.contains("delete-btn")) {
     cartProduct.remove();
     countproduct = 0;
-    notificationCounter.style.display = "none";
-    document.querySelector(".checkout").style.display = "none";
+    numCounter.textContent = countproduct;
 
+    notificationCounter.style.display = "none";
     notificationCounter.textContent = countproduct;
+    document.querySelector(".checkout").style.display = "none";
+    document.querySelector(".empty-sign").style.display = "flex";
   }
 }
 
@@ -159,10 +161,8 @@ function addProductTocart() {
   notificationCounter.textContent = countproduct;
 
   //if displayCartProd is empty display message else don't display messege
-  if (displayCartProd.textContent !== " ") {
+  if (displayCartProd.textContent !== "") {
     document.querySelector(".empty-sign").style.display = "none";
-  } else {
-    document.querySelector(".empty-sign").style.display = "flex";
   }
 }
 
