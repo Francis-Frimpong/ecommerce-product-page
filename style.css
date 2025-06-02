@@ -94,6 +94,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100px;
+  margin-bottom: 3em;
   color: hsl(219, 9%, 45%);
   font-size: 1rem;
 }
@@ -113,7 +114,7 @@ body {
 }
 
 .checkout {
-  display: block; /* so margin: auto centers it */
+  display: none; /* so margin: auto centers it */
   width: 100%;
   max-width: 350px; /* optional cap on button width */
   margin: 0 auto;

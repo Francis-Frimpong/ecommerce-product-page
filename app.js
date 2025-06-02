@@ -112,6 +112,8 @@ function deleteCartProduct(cartProduct, e) {
     cartProduct.remove();
     countproduct = 0;
     notificationCounter.style.display = "none";
+    document.querySelector(".checkout").style.display = "none";
+
     notificationCounter.textContent = countproduct;
   }
 }
@@ -139,6 +141,8 @@ function addProductTocart() {
     </div>
   `;
 
+  document.querySelector(".checkout").style.display = "block";
+
   const displayCartProd = (document.querySelector(
     ".display-cart-product"
   ).innerHTML = productDetail);
@@ -158,7 +162,7 @@ function addProductTocart() {
   if (displayCartProd.textContent !== " ") {
     document.querySelector(".empty-sign").style.display = "none";
   } else {
-    document.querySelector(".empty-sign").style.display = "block";
+    document.querySelector(".empty-sign").style.display = "flex";
   }
 }
 
